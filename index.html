@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Sanjay | AI/ML Engineer </title>
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#060709;
+color:white;
+}
+
+/* HEADER */
+
+header{
+text-align:center;
+padding:80px 20px;
+}
+
+
+
+h1{
+font: size 50px;
+}
+
+/* Typing */
+
+.cursor{
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
+
+/* SECTION */
+
+section{
+padding:50px;
+max-width:1000px;
+margin:auto;
+}
+
+/* SKILLS */
+
+.card{
+background:#1e293b;
+padding:20px;
+margin:10px;
+border-radius:12px;
+transition:.4s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
+
+/* PROJECT */
+
+.projects{
+display:flex;
+flex-wrap:wrap;
+}
+
+.projects .card{
+width:250px;
+}
+
+/* LINK */
+
+a{
+color:#00c6ff;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<header>
+
+<header class="navbar">
+
+  <div class="logo">Profile</div>
+
+  <ul class="menu">
+    <li>Product</li>
+    <li>Solutions</li>
+    <li>Resources</li>
+    <li>Pricing </li>
+  </ul>
+
+  <div class="right">
+    <a href="#">Log In</a>
+    <a href="#"> Raj</a>
+  </div>
+
+</header>
+
+
+<h1>SANJAY PRAJPAT </h1>
+
+<h2>
+I am <span id="typed"></span><span class="cursor">|</span>
+</h2>
+
+</header>
+
+<section>
+<h2>About Me</h2>
+<p>I am learning Artificial Intelligence and building real-world projects using Python and Machine Learning.</p>
+</section>
+
+<section>
+<h2>Skills</h2>
+
+<div class="card">Python</div>
+<div class="card">NumPy</div>
+<div class="card">Pandas</div>
+<div class="card">Machine Learning</div>
+<div class="card">
+  <a href="https://github.com/prajapatsanjay" target="_blank">
+    Git & GitHub
+  </a>
+</div>
+
+
+</section>
+
+<section>
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>House Price Prediction</h3>
+
+<p>ML model to predict house prices.</p>
+<a href="#">GitHub Link</a>
+</div>
+
+
+<div class="card">
+<h3>Spam Email Classifier</h3>
+<p>Detect spam emails using ML.</p>
+<a href="#">GitHub Link</a>
+</div>
+
+
+
+</div>
+
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>Phone: 8742868828</p>
+<p>Email: codewithsanjayprajapat@gmail.com</p>
+</section>
+
+<footer>
+<p>© 2026 Sanjay</p>
+</footer>
+
+<script>
+
+let words=["AI/ML Engineer","Python Developer","Data Science Learner"];
+let i=0;
+let j=0;
+let current="";
+let isDeleting=false;
+
+function type(){
+
+current=words[i];
+
+if(isDeleting){
+document.getElementById("typed").innerText=current.substring(0,j--);
+}
+else{
+document.getElementById("typed").innerText=current.substring(0,j++);
+}
+
+if(!isDeleting && j===current.length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+
+if(isDeleting && j===0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+
+setTimeout(type,isDeleting?50:100);
+
+}
+
+type();
+
+</script>
+
+</body>
+</html>
